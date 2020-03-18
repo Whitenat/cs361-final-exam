@@ -11,7 +11,7 @@ class RentalPrice
 	def calcluate_price
 		total_price = 0
 		total_price += bikes[0].weekly_rate
-		total_price += bikes[0].luggage[0].cost
+		total_price += bikes[0].luggage[0].price
 		total_price += bikes[1].daily_rate * 7
 		total_price += bikes[1].luggage[0].price
 		total_price += bikes[1].luggage[1].price

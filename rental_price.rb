@@ -9,17 +9,25 @@ class RentalPrice
 	end
 
 	def calcluate_price
-		total_price = 0
-		total_price += bikes[0].weekly_rate
-		total_price += bikes[0].luggage[0].price
-		total_price += bikes[1].daily_rate * 7
-		total_price += bikes[1].luggage[0].price
-		total_price += bikes[1].luggage[1].price
-		total_price += bikes[2].weekly_rate
-		total_price += bikes[2].luggage[0].price
-		total_price += bikes[3].weekly_rate
-		total_price += bikes[3].luggage[0].price
+		
+		for bike in bikes
+			total_price=0
+			total_price += bike.weekly_rate
+			total_price += luggage_price(bike)
+		end
 		return total_price
 
 	end
+
+
+	def luggage_price(bike)
+
+		luggage_price = 0
+		for luggage in bike.luggage
+			luggage_price += luggage.price
+		end
+		return luggage_price
+		
+	end
+
 end

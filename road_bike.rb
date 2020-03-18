@@ -5,6 +5,7 @@ class RoadBike
   def initialize
     @luggage = [Pannier.new, Pannier.new]
     @daily_rate = 15
+    @weekly_rate = 105
   end
 
   def clean
@@ -23,4 +24,7 @@ class RoadBike
     @daily_rate
   end
 
+  def weekly_rate
+    @weekly_rate
+  end
 end

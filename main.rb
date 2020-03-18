@@ -6,6 +6,7 @@
 require_relative 'bmx_bike'
 require_relative 'road_bike'
 require_relative 'mountain_bike'
+require_relative 'rental_price'
 
 bikes = [
   BmxBike.new,
@@ -14,15 +15,18 @@ bikes = [
   MountainBike.new
 ]
 
-total_price = 0
-total_price += bikes[0].weekly_rate
-total_price += bikes[0].tail_pack.cost
-total_price += bikes[1].daily_rate * 7
-total_price += bikes[1].panniers[0].price
-total_price += bikes[1].panniers[1].price
-total_price += bikes[2].weekly_rate
-total_price += bikes[2].luggage.price
-total_price += bikes[3].weekly_rate
-total_price += bikes[3].luggage.price
+# total_price = 0
+# total_price += bikes[0].weekly_rate
+# total_price += bikes[0].tail_pack.cost
+# total_price += bikes[1].daily_rate * 7
+# total_price += bikes[1].panniers[0].price
+# total_price += bikes[1].panniers[1].price
+# total_price += bikes[2].weekly_rate
+# total_price += bikes[2].luggage.price
+# total_price += bikes[3].weekly_rate
+# total_price += bikes[3].luggage.price
+
+rental_price = RentalPrice.new(bikes)
+total_price = rental_price.calcluate_price
 
 puts "Total price: #{total_price}"

@@ -3,7 +3,7 @@ require_relative 'roll_pack'
 class MountainBike
 
   def initialize
-    @luggage = RollPack.new
+    @luggage = [RollPack.new]
     @weekly_rate = 90
     @daily_rate = 25
     @hourly_rate = 10

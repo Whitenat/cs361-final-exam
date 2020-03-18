@@ -4,9 +4,8 @@ require_relative 'roll_pack'
 
 class Bike
 	def initialize
-		@luggage = 0
-		@panniers = []
-    @tail_pack = 0
+		@type = type
+		@luggage = []
     @weekly_price = 70
     @daily_price = 20
     @hourly_price = 5
